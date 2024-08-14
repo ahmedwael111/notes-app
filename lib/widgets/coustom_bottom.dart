@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
+// import 'package:notes_app/constants.dart';
 
 // ignore: must_be_immutable
 class CostomPottom extends StatelessWidget {
-  CostomPottom({super.key, required this.text, this.ontap,this.color = Colors.white});
+  CostomPottom(
+      {super.key, required this.text, this.ontap, this.color = Colors.white});
   String text;
   Color color;
   VoidCallback? ontap;
@@ -12,8 +13,8 @@ class CostomPottom extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-        decoration: BoxDecoration(
-            color:color, borderRadius: BorderRadius.circular(8)),
+        decoration:
+            BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
         height: 55,
         width: MediaQuery.of(context).size.width,
         child: Center(
