@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CostomPottom extends StatelessWidget {
-  CostomPottom(
+  const CostomPottom(
       {super.key, required this.text, this.ontap, this.color = Colors.white});
-  String text;
-  Color color;
-  VoidCallback? ontap;
+  final String text;
+  final Color color;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
