@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CostomPottom extends StatelessWidget {
   const CostomPottom(
-      {super.key, required this.text, this.ontap, this.color = Colors.white});
+      {super.key,
+      required this.text,
+      this.ontap,
+      this.color = Colors.white,
+      this.isLoading = false});
   final String text;
   final Color color;
   final VoidCallback? ontap;
+  final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,11 +24,17 @@ class CostomPottom extends StatelessWidget {
         height: 55,
         width: MediaQuery.of(context).size.width,
         child: Center(
-            child: Text(
-          text,
-          style: const TextStyle(
-              fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),
-        )),
+            child: isLoading
+                ? const CircularProgressIndicator(
+                    color: Colors.black,
+                  )
+                : Text(
+                    text,
+                    style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  )),
       ),
     );
   }
