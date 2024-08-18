@@ -48,6 +48,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'contant',
             maxlines: 5,
           ),
+          const ColorListView(),
           const SizedBox(
             height: 33,
           ),
@@ -81,6 +82,39 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 33,
           )
         ],
+      ),
+    );
+  }
+}
+
+class ColorItem extends StatelessWidget {
+  const ColorItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(top: 10, right: 6),
+      child: CircleAvatar(
+        radius: 30,
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+}
+
+class ColorListView extends StatelessWidget {
+  const ColorListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 60,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const ColorItem();
+        },
       ),
     );
   }
