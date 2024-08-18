@@ -24,21 +24,22 @@ class _NotesViewBodyState extends State<NotesViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 36,
           ),
           CostomAppBar(
+            onPressed: () {},
             title: 'Notes',
             icon: Icons.search,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Expanded(
+          const Expanded(
             child: NotesListView(),
           )
         ],
