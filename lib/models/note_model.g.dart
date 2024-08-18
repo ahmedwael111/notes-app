@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'note_model.dart';
+part of 'note_model.dart'; // tor genterate it : flutter packages pub run build_runner build
 
 // **************************************************************************
 // TypeAdapterGenerator
