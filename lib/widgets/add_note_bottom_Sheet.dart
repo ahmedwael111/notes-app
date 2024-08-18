@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubites/cubit/add_note_cubit.dart';
+import 'package:notes_app/cubites/notes_cubit/cubit/notes_cubite_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 import 'package:notes_app/widgets/coustm_text_field.dart';
 import 'package:notes_app/widgets/coustom_bottom.dart';
@@ -22,9 +23,10 @@ class AddNoteBottomSheet extends StatelessWidget {
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if (state is AddNoteFuilure) {
-              return print(state.errorMassage);
+              
             }
             if (state is AddNoteSuccess) {
+              BlocProvider.of<NotesCubiteCubit>(context).fitchAllNotes();
               Navigator.pop(context);
             }
           },
