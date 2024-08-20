@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubites/cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/widgets/color_item_list.dart';
 import 'package:notes_app/widgets/coustm_text_field.dart';
 import 'package:notes_app/widgets/coustom_bottom.dart';
 
@@ -48,6 +49,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'contant',
             maxlines: 5,
           ),
+          const SizedBox(
+            height: 33,
+          ),
           const ColorListView(),
           const SizedBox(
             height: 33,
@@ -82,39 +86,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 33,
           )
         ],
-      ),
-    );
-  }
-}
-
-class ColorItem extends StatelessWidget {
-  const ColorItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 10, right: 6),
-      child: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.red,
-      ),
-    );
-  }
-}
-
-class ColorListView extends StatelessWidget {
-  const ColorListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return const ColorItem();
-        },
       ),
     );
   }
