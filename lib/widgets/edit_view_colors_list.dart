@@ -22,7 +22,7 @@ class _EditviewColorsListState extends State<EditviewColorsList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 2 * 38,
+      height: 2 * 30,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: kcolorList.length,

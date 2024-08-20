@@ -11,15 +11,15 @@ class ColorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isActive
         ? CircleAvatar(
-            radius: 38,
+            radius: 30,
             backgroundColor: Colors.white,
             child: CircleAvatar(
-              radius: 32,
+              radius: 25,
               backgroundColor: color,
             ),
           )
         : CircleAvatar(
-            radius: 38,
+            radius: 30,
             backgroundColor: color,
           );
   }
@@ -45,7 +45,7 @@ class _ColorListViewState extends State<ColorListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 2 * 38,
+      height: 2 * 30,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: colorList.length,
