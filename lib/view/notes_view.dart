@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubites/notes_cubit/cubit/notes_cubite_cubit.dart';
 import 'package:notes_app/widgets/add_note_bottom_Sheet.dart';
 // import 'package:notes_app/widgets/costom_App_bar.dart';
@@ -24,7 +25,7 @@ class NotesView extends StatelessWidget {
           );
         },
         shape: const CircleBorder(),
-        backgroundColor: Colors.blue,
+        backgroundColor: kPrimaryColor,
         child: const Icon(
           Icons.add,
           size: 28,
