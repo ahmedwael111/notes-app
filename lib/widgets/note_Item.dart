@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/cubites/notes_cubit/cubit/notes_cubite_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/view/edit_note_view.dart';
+import 'package:notes_app/widgets/show_snakeBar.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.noteModel});
@@ -14,7 +15,9 @@ class NoteItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return  EditNoteView(noteModel: noteModel,);
+          return EditNoteView(
+            noteModel: noteModel,
+          );
         }));
       },
       child: Container(
@@ -44,6 +47,8 @@ class NoteItem extends StatelessWidget {
                   onPressed: () {
                     noteModel.delete();
                     BlocProvider.of<NotesCubiteCubit>(context).fitchAllNotes();
+                    showSnakBar(context, 'Delete Note Successed',
+                        color: Colors.red);
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,

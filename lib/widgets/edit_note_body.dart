@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/constants.dart';
+// import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubites/notes_cubit/cubit/notes_cubite_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/widgets/color_item_list.dart';
+// import 'package:notes_app/widgets/color_item_list.dart';
 import 'package:notes_app/widgets/costom_App_bar.dart';
 import 'package:notes_app/widgets/coustm_text_field.dart';
 import 'package:notes_app/widgets/edit_view_colors_list.dart';
+import 'package:notes_app/widgets/show_snakeBar.dart';
 
 class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key, required this.noteModel});
@@ -34,6 +35,7 @@ class _EditNoteBodyState extends State<EditNoteBody> {
               widget.noteModel.save();
               BlocProvider.of<NotesCubiteCubit>(context).fitchAllNotes();
               Navigator.pop(context);
+              showSnakBar(context, 'Edit note Successed', color: Colors.blue);
             },
             title: 'Edit note',
             icon: Icons.check,
@@ -67,4 +69,3 @@ class _EditNoteBodyState extends State<EditNoteBody> {
     );
   }
 }
-
