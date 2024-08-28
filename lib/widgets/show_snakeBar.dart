@@ -5,7 +5,7 @@ void showSnakBar(BuildContext context, String message,
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Text(
       message,
-      style: const TextStyle(color: Colors.white, fontSize: 18),
+      style: const TextStyle(color: Colors.white, fontSize: 16),
     ),
     backgroundColor: color,
   ));
