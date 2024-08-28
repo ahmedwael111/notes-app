@@ -27,7 +27,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
       child: Column(
         children: [
           const SizedBox(
-            height: 36,
+            height: 40,
           ),
           CostomAppBar(
             onPressed: () {},
@@ -35,7 +35,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
             icon: Icons.search,
           ),
           const SizedBox(
-            height: 20,
+            height: 12,
           ),
           const Expanded(
             child: NotesListView(),

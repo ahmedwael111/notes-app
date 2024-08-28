@@ -14,14 +14,19 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return EditNoteView(
-            noteModel: noteModel,
-          );
-        }));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return EditNoteView(
+                noteModel: noteModel,
+              );
+            },
+          ),
+        );
       },
       child: Container(
-        padding: const EdgeInsets.only(top: 22, bottom: 22, left: 16),
+        padding: const EdgeInsets.only(top: 22, bottom: 22, left: 8),
         decoration: BoxDecoration(
             color: Color(noteModel.color),
             borderRadius: BorderRadius.circular(16)),
@@ -43,18 +48,18 @@ class NoteItem extends StatelessWidget {
                   ),
                 ),
               ),
-              trailing: IconButton(
-                  onPressed: () {
-                    noteModel.delete();
-                    BlocProvider.of<NotesCubiteCubit>(context).fitchAllNotes();
-                    showSnakBar(context, 'Delete Note Successed',
-                        color: Colors.red);
-                  },
-                  icon: const Icon(
-                    FontAwesomeIcons.trash,
+              trailing: const Column(
+                children: [
+                  Icon(
+                    Icons.arrow_back,
                     color: Colors.black,
-                    size: 22,
-                  )),
+                  ),
+                  Text(
+                    'Delete',
+                    style: TextStyle(color: Colors.black, fontSize: 12),
+                  )
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 16),

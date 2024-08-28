@@ -31,7 +31,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       child: Column(
         children: [
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           CostomTextFormField(
             onSaved: (p0) {
@@ -50,11 +50,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxlines: 5,
           ),
           const SizedBox(
-            height: 33,
+            height: 22,
           ),
           const ColorListView(),
           const SizedBox(
-            height: 33,
+            height: 22,
           ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -83,7 +83,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(
-            height: 33,
+            height: 20,
           )
         ],
       ),
